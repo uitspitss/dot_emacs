@@ -1,0 +1,94 @@
+%-*-coding:euc-jp-*-
+\documentclass[14pt,dvipdfm]{beamer}
+%
+% header
+%
+% theme
+\usetheme{Pittsburgh}
+% font
+\mathversion{bold}
+\usepackage{amsmath}
+\usepackage{graphicx,color}
+\usepackage{fancybox,fancyvrb,ascmac,colortbl}
+\usepackage{ascmac}
+%\usepackage{txfonts}           % g like &
+\usepackage[varg]{txfonts}      % g like 9
+% for pdf
+\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+% disable navigation
+\setbeamertemplate{navigation symbols}{}
+% enable showing page number
+\setbeamertemplate{footline}[frame number]
+% color setting
+\definecolor{cyan}{cmyk}{  .7, 0, 0, 0}
+\definecolor{magenta}{cmyk}{0,.9, 0, 0}
+\definecolor{yellow}{cmyk}{ 0, 0,.7, 0}
+\definecolor{blue}{cmyk}{  .85,.10, 0, .30}
+\definecolor{red}{cmyk}{    0,.8,.8, 0}
+\definecolor{green}{cmyk}{ .69, 0,.23, .29}
+\definecolor{orange}{cmyk}{ 0,.5,.8, 0}
+% \definecolor{gray}{cmyk}{  .2,.2,.2,.8}
+\useinnertheme{default}		% \useinnertheme{default | circles | rectangles | rounded | inmargin}
+\useoutertheme{default}		% \useoutertheme{default | infolines | miniframes | smoothbars | sprit | shadow | tree | smoothtree}
+\usefonttheme{professionalfonts} % \usefonttheme{default | professionalfonts | serif | structurebold | structureitalicserif | structuresmallcapsserif}
+% title
+\setbeamerfont{title}{size=\LARGE, series=\bf}
+\setbeamercolor{title}{fg=blue}
+% slide header
+\setbeamertemplate{frametitle}[default][center]
+\setbeamerfont{frametitle}{size=\Large, series=\bf}
+\setbeamercolor{frametitle}{fg=black}
+% text color
+% \setbeamercolor{normal text}{fg=black, bg=gray!10}
+% \setbeamertemplate{background canvas}[vertical
+% shading][bottom=gray!5,top=gray!20]
+% background color
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{./background.eps}}
+% block
+\setbeamertemplate{blocks}[shadow=false]
+\setbeamercolor{block title}{bg=blue!80!white, fg=black}
+\setbeamercolor{block body}{bg=blue!30}
+\setbeamercolor{block title alerted}{bg=red!70!white, fg=black}
+\setbeamercolor{block body alerted}{bg=red!40!white}
+\setbeamercolor{block title example}{bg=green!70!white, fg=black}
+\setbeamercolor{block body example}{bg=green!30!white}
+% trasparent itemize
+% \setbeamercoverd{transparent=10}
+\newcommand{\slide}[2][12]{\begin{frame} \begin{center} \bf \fontsize{#1pt}{#1pt}\selectfont #2 \end{center} \end{frame}}
+\newcommand{\col}[2][magenta]{{\color{#1} #2}} %\newcommand{\col}[2][yellow]{{\color{#1} \bf #2}}
+\newcommand{\sub}[1]{{\bf #1}}
+\newcommand{\head}[2][blue]{\vspace{1em}{\Large \bf \col[#1]{#2}}}
+%listings
+\usepackage{listings, jlisting}
+\renewcommand{\lstlistingname}{list}
+\lstset{
+  breaklines = true,
+  language=C,
+  basicstyle=\ttfamily\scriptsize,
+  commentstyle={\color[rgb]{.1,.4,.1}},
+  % classoffset=1,
+  keywordstyle={\bfseries \color[rgb]{.8,.1,.2}},
+  stringstyle=\ttfamily \color[rgb]{.1,.1,.6},
+  frame=tblr,
+  framesep=5pt,
+  showstringspaces=false,
+  tabsize=8,
+}
+% figure directory
+\graphicspath{{./}}
+
+% beamer templete end -------------------------------------------
+
+\title{what}
+% \author{author}
+% \institute{institute}
+\date{when}
+
+\begin{document}
+%--- the titlepage frame -------------------------
+\begin{frame}
+ \titlepage
+\end{frame}
+%\frame{\titlepage}
+
+\end{document}

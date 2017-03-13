@@ -1,0 +1,87 @@
+%-*-coding:euc-jp-*-
+\documentclass[a4j,11pt]{jsarticle}
+\usepackage[dvips]{graphicx}
+\usepackage{amsmath}
+\usepackage{color,bm,url}
+\usepackage{fancybox,fancyvrb,ascmac,colortbl}
+%\usepackage{txfonts}		% g like &
+\usepackage[varg]{txfonts}	% g like 9
+
+%renuewcommand
+\renewcommand{\frac}{\displaystyle \frac}
+\newcommand{\ma}{\textcircled}
+\newcommand{\ru}{\footnotesize}
+\newcommand{\diff}{\mathrm{d}}
+\newcommand{\divergence}{\mathrm{div}\,}  % divergence
+\newcommand{\grad}{\mathrm{grad}\,}       % gradient
+\newcommand{\rot}{\mathrm{rot}\,}         % rotation
+\renewcommand{\thefootnote}{*\arabic{footnote}}
+
+%listings
+\usepackage{listings, jlisting}
+\renewcommand{\lstlistingname}{program}
+\lstset{
+  breaklines = true,
+  language=C,
+  basicstyle=\ttfamily\scriptsize,
+  commentstyle={\color[rgb]{.1,.4,.1}},
+  % classoffset=1,
+  keywordstyle={\bfseries \color[rgb]{.8,.1,.2}},
+  stringstyle=\ttfamily \color[rgb]{.1,.1,.6},
+  frame=tblr,
+  framesep=5pt,
+  showstringspaces=false,
+  tabsize=8,
+}
+% lsting template
+% \lstinputlisting[caption=caption text,label=label text]
+% {path}
+% when use japanese, use below
+% \begin{lstlisting}[caption=caption text,label=label text]
+%    directly write source code
+% \end{lstlisting}
+
+% figure directory
+\graphicspath{{./}}
+
+\def\since{%
+\setlength{\unitlength}{1pt}%
+\thinlines %
+\begin{picture}(12,12)%
+\put(0 ,8){.}
+\put(5 , 0){.}
+\put(10,8){.}
+\end{picture}%
+}%
+
+\def\therefore{%
+\setlength{\unitlength}{1pt}%
+\thinlines %
+\begin{picture}(12,12)%
+\put(0, 0){.}
+\put(3,5){.}
+\put(8,0){.}
+\end{picture}%
+}%
+
+\begin{document}
+% title page
+\begin{titlepage}
+\begin{center}
+\vspace*{100pt}
+{\Large subject}\\[3mm]
+{\Huge title}\\
+\vspace{340pt}
+\begin{Large}
+\begin{tabular}{lr}
+≥ÿ¿“»÷πÊ & 9310130X\\
+ª·Ãæ &°°¿ÈÕ’Ω„ÃÈ\\
+ƒÛΩ–∆¸ & \today
+\end{tabular}
+\end{Large}
+\end{center}
+\end{titlepage}
+
+\begin{thebibliography}{99}
+\end{thebibliography}
+\end{document}
