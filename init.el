@@ -67,8 +67,8 @@
 (el-get-bundle magit)
 (el-get-bundle git-gutter)
 
-;; yatex
-(el-get-bundle yatex)
+;; ;; yatex
+;; (el-get-bundle yatex)
 
 ;; json
 (el-get-bundle json-mode)
@@ -158,6 +158,9 @@
  '(company-minimum-prefix-length 1)
  '(company-selection-wrap-around t)
  '(custom-safe-themes nil)
+ '(helm-gtags-auto-update t)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-path-style (quote relative))
  '(initial-frame-alist
    (quote
     ((vertical-scroll-bars)
@@ -165,6 +168,9 @@
      (left . 797)
      (width . 77)
      (height . 44))))
+ '(package-selected-packages
+   (quote
+    (material-theme google-translate open-junk-file multiple-cursors anzu helm-c-yasnippet yasnippet popwin openwith smartrep yaml-mode web-mode emmet-mode rainbow-delimiters quickrun json-mode yatex git-gutter magit markdown-mode lua-mode js2-mode virtualenvwrapper py-autopep8 jedi-core glsl-mode highlight-indentation flycheck migemo ddskk helm-pydoc helm-gtags helm-swoop helm)))
  '(safe-local-variable-values (quote ((engine . django)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
