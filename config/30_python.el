@@ -20,14 +20,15 @@
 (add-hook 'python-mode 'jedi:setup)
 (add-to-list 'company-backends 'company-jedi)
 
-(add-hook 'python-mode-hook
-          '(lambda ()
-             (jedi-mode t)))
-
 (require 'py-autopep8)
 (setq py-autopep8-options '("--max-line-length=200"))
+(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+
 (setq flycheck-flake8-maximum-line-length 200)
-(py-autopep8-enable-on-save)
+
+(require 'virtualenvwrapper)
+(require 'auto-virtualenvwrapper)
+(add-hook 'python-mode-hook #'auto-virtualenvwrapper-activate)
 
 ;; docstring comment
 (defun python-docstring-comment()
@@ -47,6 +48,9 @@
     (insert (format "%s\"\"\"" space))))
 
 (define-key python-mode-map (kbd "C-c d") 'python-docstring-comment)
+(define-key python-mode-map (kbd "C-M->") 'python-indent-shift-right)
+(define-key python-mode-map (kbd "C-M-<") 'python-indent-shift-left)
+(define-key python-mode-map (kbd "C-m") 'newline)
 
 
 ;; ;; mod 2015/07/15 auto-complete + jedi -> company + jedi

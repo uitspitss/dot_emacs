@@ -38,7 +38,7 @@
 ;; programming
 (el-get-bundle flycheck)
 (el-get-bundle highlight-indentation)
-(el-get-bundle auto-complete)
+;; (el-get-bundle auto-complete)
 
 ;; c/c++
 (el-get-bundle company-irony :depends (company-mode))
@@ -50,6 +50,8 @@
 (el-get-bundle jedi-core)
 (el-get-bundle company-jedi :depends (company-mode))
 (el-get-bundle py-autopep8)
+(el-get-bundle virtualenvwrapper)
+(el-get-bundle robert-zaremba/auto-virtualenvwrapper.el)
 
 ;; javascript
 (el-get-bundle js2-mode)

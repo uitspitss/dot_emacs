@@ -9,7 +9,13 @@
 (setq skk-large-jisyo "~/.emacs.d/SKK-JISYO.L")
 
 (global-set-key (kbd "C-x j") 'skk-mode)
-;; (setq skk-sticky-key ";")
+(setq skk-sticky-key ";")
+
+(setq skk-server-prog "/Users/john/.anyenv/envs/rbenv/shims/google-ime-skk") ; google-ime-skkの場所
+(setq skk-server-inhibit-startup-server nil) ; 辞書サーバが起動していなかったときに Emacs からプロセスを立ち上げる
+(setq skk-server-host "localhost") ; サーバー機能を利用
+(setq skk-server-portnum 55100)     ; ポートはgoogle-ime-skk
+(setq skk-share-private-jisyo t)   ; 複数 skk 辞書を共有
 
 ;; 日本語表示しない
 (setq skk-japanese-message-and-error nil)
@@ -68,8 +74,8 @@
 (setq skk-number-style nil)
 ;; 送り仮名が厳密に正しい候補を優先
 (setq skk-henkan-strict-okuri-precedence t)
-;; 辞書の共有
-(setq skk-share-private-jisyo t)
+;; ;; 辞書の共有
+;; (setq skk-share-private-jisyo t)
 
 ;; ddskk 起動時のみ, インクリメンタルサーチを使用
 ;;; Isearch setting.

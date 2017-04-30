@@ -115,6 +115,8 @@
 ;; (global-set-key (kbd "C-M-r") 'isearch-backward)
 (global-set-key (kbd "C-M-%") 'query-replace)
 
+(define-key global-map [?¥] [?\\])
+
 ;; (setq transient-mark-mode t)
 (delete-selection-mode t)
 

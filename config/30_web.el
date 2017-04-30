@@ -1,10 +1,14 @@
 (require 'web-mode)
 
-(setq auto-mode-alist
-      (append
-       '(("\\.html$" . web-mode))
-       '(("\\.tpl$" . web-mode))
-       auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
 
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
@@ -24,32 +28,44 @@
 (define-key web-mode-map (kbd "C-c C-;")
   'web-mode-comment-or-uncomment)
 
+;; zencoding -> emmet 2013/11/07
+(require 'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode) ;; CSSにも使う
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent はスペース2個
+(eval-after-load "emmet-mode"
+  '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
 
-;; php
-(autoload 'php-mode "php-mode")
-(setq auto-mode-alist
-      (cons '("\\.php\\'" . php-mode) auto-mode-alist))
-(setq php-mode-force-pear t)
-(add-hook 'php-mode-user-hook
-  '(lambda ()
-     (setq php-manual-path "/usr/local/share/php/doc/html")
-     (setq php-manual-url "http://www.phppro.jp/phpmanual/")
+(keyboard-translate ?\C-i ?\H-i) ;;C-i と Tabの被りを回避
+(define-key emmet-mode-keymap (kbd "H-i") 'emmet-expand-line)
 
-     (require 'php-completion)
-     (php-completion-mode t)
-     (define-key php-mode-map (kbd "C-M-/") 'phpcmp-complete)
-     (make-local-variable 'ac-sources)
-     (setq ac-sources '(
-                        ac-source-words-in-same-mode-buffers
-                        ac-source-php-completion
-                        ac-source-filename
-                        ))))
 
-;; css
-(autoload 'css-mode "css-mode")
-(setq auto-mode-alist
-      (cons '("\\.css\\'" . css-mode) auto-mode-alist))
-(setq cssm-indent-function #'cssm-c-style-indenter)
+
+;; ;; php
+;; (autoload 'php-mode "php-mode")
+;; (setq auto-mode-alist
+;;       (cons '("\\.php\\'" . php-mode) auto-mode-alist))
+;; (setq php-mode-force-pear t)
+;; (add-hook 'php-mode-user-hook
+;;   '(lambda ()
+;;      (setq php-manual-path "/usr/local/share/php/doc/html")
+;;      (setq php-manual-url "http://www.phppro.jp/phpmanual/")
+
+;;      (require 'php-completion)
+;;      (php-completion-mode t)
+;;      (define-key php-mode-map (kbd "C-M-/") 'phpcmp-complete)
+;;      (make-local-variable 'ac-sources)
+;;      (setq ac-sources '(
+;;                         ac-source-words-in-same-mode-buffers
+;;                         ac-source-php-completion
+;;                         ac-source-filename
+;;                         ))))
+
+;; ;; css
+;; (autoload 'css-mode "css-mode")
+;; (setq auto-mode-alist
+;;       (cons '("\\.css\\'" . css-mode) auto-mode-alist))
+;; (setq cssm-indent-function #'cssm-c-style-indenter)
 
 ;; ;; mmm-mode
 ;; (require 'mmm-auto)
@@ -73,17 +89,6 @@
 ;;     :back "\\?>")))
 ;; (add-to-list 'auto-mode-alist '("\\.php?\\'" . xml-mode))
 
-;; zencoding -> emmet 2013/11/07
-(require 'emmet-mode)
-(add-hook 'web-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook  'emmet-mode) ;; CSSにも使う
-(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent はスペース2個
-(define-key emmet-mode-keymap (kbd "C-i") 'emmet-expand-line)
-(eval-after-load "emmet-mode"
-  '(define-key emmet-mode-keymap (kbd "C-j") nil)) ;; C-j は newline のままにしておく
-
-;; (keyboard-translate ?\C-i ?\H-i) ;;C-i と Tabの被りを回避
-;; (define-key emmet-mode-keymap (kbd "H-i") 'emmet-expand-line) ;; C-i で展開
 
 ;; ;; zencoding
 ;; (require 'zencoding-mode)
