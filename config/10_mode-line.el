@@ -16,7 +16,7 @@
     (flycheck-mode . " Fc")
     (helm-mode . " He")
     (git-gutter-mode . " Gg")
-    (auto-complete-mode . " AC")
+    ;; (auto-complete-mode . " AC")
     (company-mode . " Com")
     (perl-completion-mode . " PC")
     (smartparens-mode . "()")
