@@ -25,6 +25,7 @@
 ;; company
 (el-get-bundle company-mode)
 (el-get-bundle expez/company-quickhelp)
+(el-get-bundle pos-tip)
 
 ;; helm
 (el-get-bundle helm)
