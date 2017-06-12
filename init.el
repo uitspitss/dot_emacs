@@ -6,7 +6,6 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
 
 (when load-file-name
   (setq user-emacs-directory (file-name-directory load-file-name)))
@@ -64,6 +63,10 @@
 ;; javascript
 (el-get-bundle js2-mode)
 (el-get-bundle company-tern :depends (company-mode))
+
+;; php
+(el-get-bundle ac-php)
+(el-get-bundle stesie/company-php)
 
 ;; lua
 (el-get-bundle lua-mode)
@@ -187,3 +190,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
