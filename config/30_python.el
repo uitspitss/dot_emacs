@@ -15,14 +15,14 @@
 (add-hook 'python-mode-hook 'highlight-indentation-current-column-mode)
 
 
-(setenv "PYTHONPATH" ":/Users/john/.anyenv/envs/pyenv/versions/2.6.9/lib/python2.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/2.7.11/lib/python2.7/site-packages:/Users/john/.anyenv/envs/pyenv/versions/2.7.12/lib/python2.7/site-packages:/Users/john/.anyenv/envs/pyenv/versions/2.7.6/lib/python2.7/site-packages:/Users/john/.anyenv/envs/pyenv/versions/2.7.8/lib/python2.7/site-packages:/Users/john/.anyenv/envs/pyenv/versions/3.2.5/lib/python3.2/site-packages:/Users/john/.anyenv/envs/pyenv/versions/3.4.3/lib/python3.4/site-packages:/Users/john/.anyenv/envs/pyenv/versions/3.5.2/lib/python3.5/site-packages:/Users/john/.anyenv/envs/pyenv/versions/3.6.0/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/3.6.1/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/TensorFlow/lib/python3.5/site-packages:/Users/john/.anyenv/envs/pyenv/versions/captcha/lib/python3.5/site-packages:/Users/john/.anyenv/envs/pyenv/versions/cui_clock/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/django/lib/python3.5/site-packages:/Users/john/.anyenv/envs/pyenv/versions/flask-lesson/lib/python3.5/site-packages:/Users/john/.anyenv/envs/pyenv/versions/flask-planetarium/lib/python3.5/site-packages:/Users/john/.anyenv/envs/pyenv/versions/learning/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/mysql/lib/python3.5/site-packages:/Users/john/.anyenv/envs/pyenv/versions/recaptcha/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/session/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/test/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/tf/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/tf-ocr/lib/python3.6/site-packages")
+(setenv "PYTHONPATH" ":/Users/john/.anyenv/envs/pyenv/versions/2.7.13/lib/python2.7/site-packages:/Users/john/.anyenv/envs/pyenv/versions/3.6.2/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/ddf/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/ddf-2.7/lib/python2.7/site-packages:/Users/john/.anyenv/envs/pyenv/versions/keras-test/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/ml2lm/lib/python3.6/site-packages:/Users/john/.anyenv/envs/pyenv/versions/monsters/lib/python3.6/site-packages")
 
 (defun my/python-mode-hook ()
   (add-to-list 'company-backends 'company-jedi))
 (add-hook 'python-mode-hook 'my/python-mode-hook)
 
 (require 'py-autopep8)
-(setq py-autopep8-options '("--max-line-length=200"))
+;; (setq py-autopep8-options '("--max-line-length=200"))
 (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
 ;; ;; pyenv-mode + pyenv-mode-auto

@@ -64,6 +64,7 @@
 (set-language-environment "Japanese")
 
 (global-unset-key "\C-\\")
+(global-unset-key "\C-z")
 
 ;; coding utf-8
 (set-terminal-coding-system 'utf-8)

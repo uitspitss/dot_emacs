@@ -9,7 +9,6 @@
  '(company-minimum-prefix-length 1)
  '(company-selection-wrap-around t))
 
-
 (set-face-attribute 'company-tooltip nil
                     :foreground "black" :background "lightgrey")
 (set-face-attribute 'company-tooltip-common nil

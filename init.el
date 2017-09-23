@@ -64,6 +64,10 @@
 (el-get-bundle js2-mode)
 (el-get-bundle company-tern :depends (company-mode))
 
+;; typescript
+(el-get-bundle typescript)
+(el-get-bundle tide)
+
 ;; php
 (el-get-bundle ac-php)
 (el-get-bundle stesie/company-php)
@@ -107,7 +111,7 @@
 (el-get-bundle multiple-cursors)
 (el-get-bundle open-junk-file)
 (el-get-bundle google-translate)
-
+(el-get-bundle zoom-window)
 
 ;; material-theme
 (el-get-bundle material-theme)
@@ -160,18 +164,17 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(anzu-deactivate-region t)
- ;; '(anzu-mode-lighter "")
- ;; '(anzu-replace-to-string-separator "")
- ;; '(anzu-search-threshold 1000)
- ;; '(anzu-use-migemo nil)
- ;; '(company-idle-delay nil)
- ;; '(company-minimum-prefix-length 1)
- ;; '(company-selection-wrap-around t)
- ;; '(custom-safe-themes nil)
- ;; '(helm-gtags-auto-update t)
- ;; '(helm-gtags-ignore-case t)
- ;; '(helm-gtags-path-style (quote relative))
+ '(anzu-deactivate-region t)
+ '(anzu-mode-lighter "")
+ '(anzu-replace-to-string-separator "")
+ '(anzu-search-threshold 1000)
+ '(anzu-use-migemo nil)
+ '(company-idle-delay nil)
+ '(company-minimum-prefix-length 1)
+ '(company-selection-wrap-around t)
+ '(helm-gtags-auto-update t)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-path-style (quote relative))
  '(initial-frame-alist
    (quote
     ((vertical-scroll-bars)
@@ -179,11 +182,8 @@
      (left . 797)
      (width . 77)
      (height . 44))))
- ;; '(package-selected-packages
- ;;   (quote
- ;;    (material-theme google-translate open-junk-file multiple-cursors anzu helm-c-yasnippet yasnippet popwin openwith smartrep yaml-mode web-mode emmet-mode rainbow-delimiters quickrun json-mode yatex git-gutter magit markdown-mode lua-mode js2-mode virtualenvwrapper py-autopep8 jedi-core glsl-mode highlight-indentation flycheck migemo ddskk helm-pydoc helm-gtags helm-swoop helm)))
- '(safe-local-variable-values (quote ((engine . django))))
- )
+ '(package-selected-packages (quote (typescript)))
+ '(safe-local-variable-values (quote ((engine . django)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

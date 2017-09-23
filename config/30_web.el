@@ -8,6 +8,7 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
 
 
 (setq web-mode-markup-indent-offset 2)
@@ -23,6 +24,16 @@
 (setq web-mode-enable-current-element-highlight t)
 
 (setq web-mode-enable-engine-detection t)
+(setq web-mode-engines-alist
+      '(("django"    . "\\.html\\'"))
+)
+(add-hook
+ 'web-mode-hook
+ (lambda ()
+   (setq-local electric-pair-inhibit-predicate
+               `(lambda (c)
+                  (if (char-equal c ?{) t (,electric-pair-inhibit-predicate c))))))
+
 
 (define-key web-mode-map (kbd "C-;") nil)
 (define-key web-mode-map (kbd "C-c C-;")
