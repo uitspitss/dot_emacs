@@ -24,6 +24,7 @@
 
 ;; 保存前に自動でクリーンアップ
 (setq whitespace-action '(auto-cleanup))
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (global-whitespace-mode 1)
 

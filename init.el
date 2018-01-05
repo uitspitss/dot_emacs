@@ -50,6 +50,8 @@
 (el-get-bundle elpa:jedi-core)
 (el-get-bundle company-jedi :depends (company-mode))
 (el-get-bundle py-autopep8)
+(el-get-bundle ein)
+(el-get-bundle skewer-mode)
 
 ;; (el-get-bundle rejeep/f.el)
 ;; (el-get-bundle pythonic)
@@ -63,6 +65,11 @@
 ;; javascript
 (el-get-bundle js2-mode)
 (el-get-bundle company-tern :depends (company-mode))
+
+;; golang
+(el-get-bundle go-mode)
+(el-get-bundle nsf/gocode)
+
 
 ;; typescript
 (el-get-bundle typescript)
